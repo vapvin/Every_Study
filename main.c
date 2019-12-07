@@ -2,13 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-int a;
-
 int main(void) {
     
-    scanf("%d", &a);
-    printf("The Number is %d \n", a);
+    double a;
+    
+    scanf("%lf", &a);
+    printf("The Number is %.2f \n", a);
     system("pause");
     return 0;
 
