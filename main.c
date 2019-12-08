@@ -1,51 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define SIZE 10000
 #define INF 999999
 
-int queue[SIZE];
-int front = 0;
-int rear = 0;
+typedef struct {
+    int data;
+    struct Node *next;
+} Node;
 
-void push(int data) {
-    if(rear >= SIZE) {
-        printf("큐 오버플로우가 발생했습니다. \n");
-        return;
+typedef struct {
+    Node *front;
+    Node *rear;
+    int count;
+} Queue;
+
+void push(Queue *queue, int data) {
+    Node *node = (Node*)malloc(sizeof(Node));
+    node -> data = data;
+    node -> next = NULL;
+    if (queue -> count == 0){
+        queue -> front = node;
+    } else {
+        queue -> rear -> next = node;
     }
 
-    queue[rear++] = data;
+    queue -> rear = node;
+    queue -> count++;
 }
-
-int pop() {
-    if (front == rear) {
-        printf("큐 언더플로우가 발생했습니다. \n");
-        return -INF;
-    }
-
-    return queue[front++];
-
-}
-
-
-void show() {
-    printf("--- 큐의 앞 ---\n");
-    for (int i = front; i < rear; i++) {
-        printf("%d\n", queue[i]);
-    }
-    printf("--- 큐의 뒤 ---\n");
-}   
 
 int main(void){
-    push(7);
-    push(6);
-    push(5);
-    pop();
-    pop();
-    push(9);
-    push(3);
-    pop();
-    show();
-
+  
     system("pause");
 
     return 0;
