@@ -4,11 +4,15 @@
 
 int main(void) {
     
-    double a;
-    
-    scanf("%lf", &a);
-    printf("The Number is %.2f \n", a);
-    system("pause");
-    return 0;
+    int a = 5;
 
+    int *b = &a;
+
+    printf("%d \n", b);
+    printf("%d \n", *b);
+
+    system("pause");
+
+    return 0;
+    
 }
