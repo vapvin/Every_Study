@@ -4,13 +4,11 @@
 
 int main(void) {
     
-    int a = 5;
+    int a[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-    int *b = &a;
+    int *b = a;
 
-    int **c = &b;
-
-    printf("%d", **c);
+    printf("%d \n", b[4]); 
 
     system("pause");
 
