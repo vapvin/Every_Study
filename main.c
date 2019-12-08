@@ -16,7 +16,7 @@ void push(int data) {
     queue[rear++] = data;
 }
 
-void pop() {
+int pop() {
     if (front == rear) {
         printf("큐 언더플로우가 발생했습니다. \n");
         return -INF;
@@ -39,9 +39,12 @@ int main(void){
     push(7);
     push(6);
     push(5);
-    pop(7);
-    push(4);
-    pop(6);
+    pop();
+    pop();
+    push(9);
+    push(3);
+    pop();
+    show();
 
     system("pause");
 
