@@ -8,48 +8,52 @@
 
     <style>
         .grid {
+            width: 800px;
+            margin: 0 auto;
             display: grid;
             grid-gap: 10px;
             grid-template-columns: repeat(3, 1fr);
             grid-auto-rows: 100px;
-            grid-template-areas:
-                "header header header"
-                "hero main main"
-                "side extra extra"
-                "image image post"
-                "footer footer footer"
         }
 
         .items:nth-child(1) {
-            grid-area: header; 
+            grid-column: 1/4; 
+            grid-row: 1/2; 
             background: #198762;
         }
         .items:nth-child(2) {
-            grid-area: hero;
+            grid-column: 1/2; 
+            grid-row: 2/4; 
             background: #122362;
         }
         .items:nth-child(3) {
-            grid-area: main;
+            grid-column: 2/4; 
+            grid-row: 2/6; 
             background: #124662;
         }
         .items:nth-child(4) {
-            grid-area: side;
+            grid-column: 1/2; 
+            grid-row: 4/8;
             background: #124762;
         }
         .items:nth-child(5) {
-            grid-area: extra;
+            grid-column: 2/4; 
+            grid-row: 6/8; 
             background: #124f62;
         }
         .items:nth-child(6) {
-            grid-area: image;
+            grid-column: 1/3; 
+            grid-row: 8/10; 
             background: #12ac62;
         }
         .items:nth-child(7) {
-            grid-area: post;
+            grid-column: 3/4; 
+            grid-row: 8/10; 
             background: #12fa62;
         }
         .items:nth-child(8) {
-            grid-area: footer;
+            grid-column: 1/4; 
+            grid-row: 10/11;
             background: #129f62;
         }
     </style>
